@@ -1,4 +1,5 @@
-import { SectionHeader } from "./About";
+import Reveal from "./Reveal";
+import { SectionHeader } from "./SectionHeader";
 
 const jobs = [
   {
@@ -7,10 +8,10 @@ const jobs = [
     location: "Pune",
     period: "Jan 2025 — Present",
     bullets: [
-      "Built real-time IoT monitoring dashboards in Grafana for BMS KPIs — energy, temperature, AQI (CO2, PM2.5), lift utilities, and MCB status across 5+ enterprise clients.",
-      "Developed IPMVP-compliant regression models in Python for energy baseline calculation — improving optimisation accuracy by 15%.",
-      "Designed Power BI forecasting dashboards for energy consumption and peak demand, reducing client penalty costs by 10%.",
-      "Engineered PostgreSQL ↔ Python ↔ Grafana / Power BI pipelines integrating InfluxDB time-series, saving 10+ manual hours/week.",
+      "Built real-time IoT dashboards in Grafana for BMS KPIs — energy, AQI, lift utilities, MCB status across 5+ enterprise clients.",
+      "Developed IPMVP-compliant regression models in Python — improved energy optimisation accuracy by 15%.",
+      "Designed Power BI forecasting dashboards for energy consumption, reducing client penalty costs by 10%.",
+      "Engineered PostgreSQL ↔ Python ↔ Grafana / Power BI pipelines integrating InfluxDB time-series, saving 10+ hours/week.",
       "Contributed to ESG/ASHRAE product development by defining KPIs for the BMS web portal.",
     ],
   },
@@ -20,9 +21,9 @@ const jobs = [
     location: "Pune",
     period: "Sept — Dec 2024",
     bullets: [
-      "Built Power BI and Tableau dashboards for Travel, Oil & Gas, and Real Estate sectors using advanced DAX & Power Query.",
+      "Built Power BI and Tableau dashboards for Travel, Oil & Gas, and Real Estate sectors using DAX & Power Query.",
       "Developed ETL pipelines using Microsoft Fabric and SSIS.",
-      "Built ML regression and classification models for demand forecasting and predictive maintenance — improving forecast reliability by 12%.",
+      "Built ML regression and classification models — improving forecast reliability by 12%.",
     ],
   },
   {
@@ -31,43 +32,37 @@ const jobs = [
     location: "Remote",
     period: "May — July 2024",
     bullets: [
-      "Performed EDA, data cleaning, and clustering using Python.",
+      "Performed EDA, data cleaning and clustering using Python.",
       "Built churn prediction models and customer behaviour dashboards in Power BI.",
     ],
   },
 ];
 
 const Experience = () => (
-  <section id="experience" className="relative py-24">
+  <section id="experience" className="relative py-28">
     <div className="container mx-auto px-6">
-      <SectionHeader kicker="// 03" title="Experience" />
+      <SectionHeader kicker="03 — Work" title="Where I've" italic="shipped." />
 
-      <div className="relative max-w-4xl mx-auto">
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary to-transparent shadow-[0_0_10px_hsl(var(--primary))]" />
-
+      <div className="space-y-4 max-w-5xl">
         {jobs.map((job, i) => (
-          <div
-            key={job.company}
-            className={`relative mb-12 md:w-1/2 ${i % 2 === 0 ? "md:pr-12 md:ml-0" : "md:pl-12 md:ml-auto"} pl-12`}
-          >
-            {/* Dot */}
-            <div className={`absolute top-6 ${i % 2 === 0 ? "md:-right-2" : "md:-left-2"} left-2.5 md:left-auto w-4 h-4 rounded-full bg-primary shadow-[0_0_15px_hsl(var(--primary))] animate-glow-pulse`} />
-            <div className="neon-card rounded-xl p-6 animate-fade-in" style={{ animationDelay: `${i * 0.15}s` }}>
-              <div className="font-mono-code text-xs text-primary tracking-wider mb-2">{job.period}</div>
-              <h3 className="font-display text-xl font-bold">{job.role}</h3>
-              <div className="text-primary-glow text-sm mb-4">
-                {job.company} <span className="text-muted-foreground">· {job.location}</span>
+          <Reveal key={job.company} delay={i * 100}>
+            <article className="glass-card rounded-2xl p-6 md:p-8 grid md:grid-cols-12 gap-6 group">
+              <div className="md:col-span-4">
+                <div className="font-mono-code text-xs text-primary-glow tracking-widest mb-2">{job.period}</div>
+                <h3 className="font-display text-2xl font-bold leading-tight">{job.role}</h3>
+                <div className="mt-1 text-foreground/70">{job.company}</div>
+                <div className="text-sm text-foreground/45 font-mono-code">{job.location}</div>
               </div>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <ul className="md:col-span-8 space-y-2.5 text-foreground/70 text-[15px] leading-relaxed">
                 {job.bullets.map((b, j) => (
-                  <li key={j} className="flex gap-2">
-                    <span className="text-primary mt-1.5 text-xs">●</span>
+                  <li key={j} className="flex gap-3">
+                    <span className="text-primary-glow shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-primary-glow" />
                     <span>{b}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </article>
+          </Reveal>
         ))}
       </div>
     </div>

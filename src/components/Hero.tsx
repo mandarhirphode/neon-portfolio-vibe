@@ -1,60 +1,70 @@
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { ArrowDown, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import photo from "@/assets/mandar-photo.png";
 import Typewriter from "./Typewriter";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16">
-      <div
-        className="absolute inset-0 -z-10 opacity-30"
-        style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-      />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-      <div className="absolute inset-0 -z-10 grid-bg opacity-40" />
-
-      {/* scanning line */}
-      <div className="absolute inset-x-0 -z-10 h-1 bg-gradient-to-r from-transparent via-primary to-transparent shadow-[0_0_20px_hsl(var(--primary))] animate-scan" />
-
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6 animate-fade-in-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 bg-primary/5 backdrop-blur-sm font-mono-code text-xs">
-            <span className="w-2 h-2 rounded-full bg-primary animate-glow-pulse" />
-            <span className="text-primary">AVAILABLE FOR OPPORTUNITIES</span>
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden pt-28 pb-20"
+    >
+      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center relative">
+        {/* Left content */}
+        <div className="lg:col-span-7 space-y-7">
+          <div className="reveal-mask">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-mono-code">
+              <Sparkles className="w-3.5 h-3.5 text-primary-glow" />
+              <span className="text-foreground/80">Open to data analyst roles</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-primary-glow animate-pulse-soft" />
+            </div>
           </div>
 
-          <h1 className="font-display text-5xl md:text-7xl font-black leading-tight">
-            <span className="block text-foreground">Hi, I'm</span>
-            <span className="block neon-text animate-text-flicker">MANDAR</span>
-            <span className="block gradient-text bg-[length:200%_auto] animate-gradient-shift">HIRPHODE</span>
-          </h1>
+          <div>
+            <h1 className="font-display font-bold leading-[0.95] tracking-tight text-balance">
+              <span className="reveal-mask block text-5xl md:text-7xl lg:text-8xl">
+                <span>I turn messy</span>
+              </span>
+              <span className="reveal-mask block text-5xl md:text-7xl lg:text-8xl" style={{ animationDelay: "0.15s" }}>
+                <span>
+                  <span className="font-serif-italic gradient-text">data</span> into
+                </span>
+              </span>
+              <span className="reveal-mask block text-5xl md:text-7xl lg:text-8xl" style={{ animationDelay: "0.3s" }}>
+                <span>decisions.</span>
+              </span>
+            </h1>
+          </div>
 
-          <div className="text-2xl md:text-3xl min-h-[2.5rem]">
+          <div className="text-xl md:text-2xl min-h-[2rem] text-foreground/80 reveal-mask" style={{ animationDelay: "0.4s" }}>
+            <span className="text-foreground/50">{"// "}</span>
             <Typewriter />
           </div>
 
-          <p className="text-muted-foreground max-w-xl leading-relaxed">
-            Production data analyst delivering real-time IoT analytics, ESG/IPMVP energy intelligence, and BI pipelines
-            for enterprise clients across energy, real-estate and smart-building domains.
+          <p className="text-foreground/60 max-w-xl leading-relaxed text-pretty reveal-mask" style={{ animationDelay: "0.5s" }}>
+            Hey, I'm <span className="text-foreground font-medium">Mandar</span> — a data analyst building real-time IoT
+            dashboards, ESG/IPMVP energy models, and BI pipelines for enterprise clients in Pune, India.
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-2">
+          <div className="flex flex-wrap gap-3 pt-2 reveal-mask" style={{ animationDelay: "0.6s" }}>
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-mono-code font-bold uppercase tracking-wider shadow-[0_0_20px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_40px_hsl(var(--primary))] transition-all hover:-translate-y-0.5"
+              data-cursor="hover"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-display font-semibold shine hover:shadow-[0_0_40px_hsl(var(--primary)/0.7)] transition-all"
             >
-              View Projects <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              See my work
+              <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
             </a>
             <a
               href="/Mandar_Hirphode_Resume.pdf"
               download
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/60 text-primary font-mono-code font-bold uppercase tracking-wider hover:bg-primary/10 hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)] transition-all"
+              data-cursor="hover"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-foreground font-display font-semibold hover:bg-white/10 hover:border-white/30 transition-all"
             >
               <Download className="w-4 h-4" /> Resume
             </a>
           </div>
 
-          <div className="flex items-center gap-5 pt-4">
+          <div className="flex items-center gap-5 pt-3 reveal-mask" style={{ animationDelay: "0.7s" }}>
             {[
               { icon: Github, href: "https://github.com/mandarhirphode", label: "GitHub" },
               { icon: Linkedin, href: "https://www.linkedin.com/in/mandar-hirphode", label: "LinkedIn" },
@@ -66,41 +76,85 @@ const Hero = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={label}
-                className="text-muted-foreground hover:text-primary glow-on-hover transition-colors"
+                data-cursor="hover"
+                className="text-foreground/50 hover:text-primary-glow transition-colors"
               >
-                <Icon className="w-6 h-6" />
+                <Icon className="w-5 h-5" />
               </a>
             ))}
           </div>
         </div>
 
-        {/* Avatar */}
-        <div className="relative animate-fade-in-right flex justify-center">
-          <div className="relative w-72 h-72 md:w-96 md:h-96">
-            {/* Spinning ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/40 animate-spin-slow" />
-            <div className="absolute inset-4 rounded-full border border-primary/20 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
-            {/* Glow */}
-            <div className="absolute inset-8 rounded-full bg-primary/20 blur-3xl animate-glow-pulse" />
-            {/* Photo */}
-            <div className="absolute inset-10 rounded-full overflow-hidden border-2 border-primary shadow-[0_0_60px_hsl(var(--primary)/0.6)] animate-float">
-              <img src={photo} alt="Mandar Hirphode" className="w-full h-full object-cover" />
+        {/* Right photo card */}
+        <div className="lg:col-span-5 relative animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+          <div className="relative aspect-[4/5] max-w-md mx-auto">
+            {/* Decorative glow */}
+            <div className="absolute -inset-8 bg-primary/30 blur-3xl rounded-full opacity-60 animate-pulse-soft" />
+
+            {/* Spinning text ring */}
+            <div className="absolute -top-6 -right-6 w-32 h-32 animate-spin-slow z-20">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <defs>
+                  <path id="circle" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" />
+                </defs>
+                <text className="fill-foreground/70 font-mono-code" style={{ fontSize: "9.5px", letterSpacing: "1.5px" }}>
+                  <textPath href="#circle">AVAILABLE • FOR • HIRE • 2026 • </textPath>
+                </text>
+              </svg>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-3 h-3 rounded-full bg-primary-glow shadow-[0_0_15px_hsl(var(--primary))]" />
+              </div>
             </div>
+
+            {/* Photo frame */}
+            <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/10 noise-overlay">
+              <img
+                src={photo}
+                alt="Mandar Hirphode portrait"
+                className="w-full h-full object-cover"
+                width={480}
+                height={600}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              {/* tag */}
+              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                <div>
+                  <div className="font-mono-code text-xs text-primary-glow">PUNE · IN</div>
+                  <div className="font-display font-bold text-lg text-white">Mandar Hirphode</div>
+                </div>
+                <span className="px-2.5 py-1 rounded-full bg-primary/90 text-primary-foreground text-[10px] font-mono-code font-bold uppercase tracking-wider">
+                  ● Live
+                </span>
+              </div>
+            </div>
+
             {/* Floating chips */}
-            <div className="absolute -top-2 -right-2 px-3 py-1.5 rounded-lg bg-card border border-primary/60 font-mono-code text-xs text-primary shadow-[0_0_15px_hsl(var(--primary)/0.5)] animate-float" style={{ animationDelay: "0.5s" }}>
-              Power BI
+            <div
+              className="absolute -left-6 top-12 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 font-mono-code text-xs animate-float"
+              style={{ animationDelay: "0.5s" }}
+            >
+              📊 Power BI
             </div>
-            <div className="absolute bottom-4 -left-4 px-3 py-1.5 rounded-lg bg-card border border-accent-blue/60 font-mono-code text-xs text-accent-blue shadow-[0_0_15px_hsl(var(--accent-blue)/0.5)] animate-float" style={{ animationDelay: "1s" }}>
-              Python
+            <div
+              className="absolute -right-4 bottom-32 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 font-mono-code text-xs animate-float"
+              style={{ animationDelay: "1.2s" }}
+            >
+              🐍 Python
             </div>
-            <div className="absolute top-1/2 -right-6 px-3 py-1.5 rounded-lg bg-card border border-accent-yellow/60 font-mono-code text-xs text-accent-yellow shadow-[0_0_15px_hsl(var(--accent-yellow)/0.5)] animate-float" style={{ animationDelay: "1.5s" }}>
-              SQL
-            </div>
-            <div className="absolute -bottom-2 right-10 px-3 py-1.5 rounded-lg bg-card border border-primary/60 font-mono-code text-xs text-primary shadow-[0_0_15px_hsl(var(--primary)/0.5)] animate-float" style={{ animationDelay: "2s" }}>
-              Grafana
+            <div
+              className="absolute -left-8 bottom-16 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 font-mono-code text-xs animate-float"
+              style={{ animationDelay: "1.8s" }}
+            >
+              📡 IoT
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll hint */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/40 text-xs font-mono-code">
+        <span>scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-foreground/40 to-transparent" />
       </div>
     </section>
   );

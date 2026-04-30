@@ -1,5 +1,6 @@
-import { ExternalLink, Github } from "lucide-react";
-import { SectionHeader } from "./About";
+import { ArrowUpRight, Github } from "lucide-react";
+import Reveal from "./Reveal";
+import { SectionHeader } from "./SectionHeader";
 
 const projects = [
   {
@@ -16,12 +17,12 @@ const projects = [
   },
   {
     title: "Movie Recommender System",
-    desc: "Content-based recommender using TF-IDF vectorisation and cosine similarity with 85% accuracy. Streamlit prototype + A/B logging.",
+    desc: "Content-based recommender using TF-IDF and cosine similarity at 85% accuracy. Streamlit prototype + A/B logging.",
     tags: ["Python", "Scikit-learn", "Streamlit", "TF-IDF"],
     href: "https://github.com/mandyhirphode/movie_recommender_system",
   },
   {
-    title: "Global Terrorism DB — EDA",
+    title: "Global Terrorism — EDA",
     desc: "EDA, dashboards and derived metrics for trend analysis on the Global Terrorism dataset.",
     tags: ["Python", "Pandas", "EDA", "Power BI"],
     href: "https://github.com/mandyhirphode/EDA_on_global_terrorism_data-",
@@ -34,46 +35,56 @@ const projects = [
   },
   {
     title: "IPL & Play Store EDA",
-    desc: "Trend analysis, rating patterns, and match performance insights using Python — uncovering behavioural and performance signals.",
+    desc: "Trend analysis, rating patterns and match performance insights using Python — uncovering behavioural signals.",
     tags: ["Python", "Pandas", "Matplotlib"],
     href: "https://github.com/mandarhirphode",
   },
 ];
 
 const Projects = () => (
-  <section id="projects" className="relative py-24 bg-card/30">
+  <section id="projects" className="relative py-28">
     <div className="container mx-auto px-6">
-      <SectionHeader kicker="// 04" title="Projects" />
+      <SectionHeader kicker="04 — Projects" title="Things I've" italic="built." />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 gap-5">
         {projects.map((p, i) => (
-          <a
-            key={p.title}
-            href={p.href}
-            target="_blank"
-            rel="noreferrer"
-            className="neon-card group rounded-xl p-6 flex flex-col gap-4 animate-fade-in relative overflow-hidden"
-            style={{ animationDelay: `${i * 0.08}s` }}
-          >
-            {/* corner accent */}
-            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/30 to-transparent blur-2xl group-hover:from-primary/60 transition-all" />
-            <div className="flex items-start justify-between relative">
-              <div className="font-mono-code text-primary text-xs tracking-widest">PROJECT_0{i + 1}</div>
-              <div className="flex gap-2 text-muted-foreground">
-                <Github className="w-4 h-4 group-hover:text-primary transition-colors" />
-                <ExternalLink className="w-4 h-4 group-hover:text-primary transition-colors" />
+          <Reveal key={p.title} delay={i * 70}>
+            <a
+              href={p.href}
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="hover"
+              className="glass-card group block rounded-2xl p-7 h-full relative overflow-hidden"
+            >
+              <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-primary/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="flex items-start justify-between mb-5 relative">
+                <div className="font-mono-code text-xs text-primary-glow tracking-widest">
+                  {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+                </div>
+                <div className="flex items-center gap-2 text-foreground/50 group-hover:text-foreground transition-colors">
+                  <Github className="w-4 h-4" />
+                  <ArrowUpRight className="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                </div>
               </div>
-            </div>
-            <h3 className="font-display text-xl font-bold group-hover:neon-text transition-all">{p.title}</h3>
-            <p className="text-sm text-muted-foreground flex-1">{p.desc}</p>
-            <div className="flex flex-wrap gap-2">
-              {p.tags.map((t) => (
-                <span key={t} className="px-2 py-0.5 text-xs rounded-md font-mono-code bg-primary/10 border border-primary/30 text-primary">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </a>
+
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-3 leading-tight group-hover:gradient-text transition-colors">
+                {p.title}
+              </h3>
+              <p className="text-foreground/65 leading-relaxed mb-5">{p.desc}</p>
+
+              <div className="flex flex-wrap gap-2">
+                {p.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="px-2.5 py-1 text-xs rounded-full font-mono-code bg-white/5 border border-white/10 text-foreground/70"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </a>
+          </Reveal>
         ))}
       </div>
     </div>

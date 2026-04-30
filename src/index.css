@@ -20,6 +20,8 @@
 
     --primary-glow: 135 100% 60%;
     --accent-cyan: 160 100% 55%;
+    --accent-blue: 210 100% 60%;
+    --accent-yellow: 52 100% 55%;
 
     --secondary: 150 30% 12%;
     --secondary-foreground: 140 80% 92%;
@@ -39,7 +41,8 @@
 
     --radius: 0.75rem;
 
-    --gradient-neon: linear-gradient(135deg, hsl(142 100% 50%), hsl(160 100% 55%));
+    --gradient-neon: linear-gradient(135deg, hsl(142 100% 50%), hsl(210 100% 60%), hsl(52 100% 55%));
+    --gradient-tri: linear-gradient(90deg, hsl(142 100% 50%), hsl(210 100% 60%), hsl(52 100% 55%));
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%), hsl(150 30% 6%));
     --gradient-radial: radial-gradient(circle at 50% 50%, hsl(142 100% 50% / 0.15), transparent 70%);
 
@@ -64,8 +67,9 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
     background-image:
-      radial-gradient(circle at 20% 10%, hsl(142 100% 50% / 0.08), transparent 50%),
-      radial-gradient(circle at 80% 80%, hsl(160 100% 55% / 0.06), transparent 50%);
+      radial-gradient(circle at 15% 10%, hsl(142 100% 50% / 0.10), transparent 50%),
+      radial-gradient(circle at 85% 20%, hsl(210 100% 60% / 0.08), transparent 50%),
+      radial-gradient(circle at 50% 90%, hsl(52 100% 55% / 0.06), transparent 55%);
     background-attachment: fixed;
   }
 
@@ -113,6 +117,15 @@
 
   .gradient-text {
     background: var(--gradient-neon);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-tri {
+    background: var(--gradient-tri);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -1,6 +1,6 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import photo from "@/assets/mandar-photo.jpg";
+import photo from "@/assets/mandar-photo.png";
 import Typewriter from "./Typewriter";
 
 const Hero = () => {
@@ -87,16 +87,16 @@ const Hero = () => {
               <img src={photo} alt="Mandar Hirphode" className="w-full h-full object-cover" />
             </div>
             {/* Floating chips */}
-            <div className="absolute -top-2 -right-2 px-3 py-1.5 rounded-lg bg-card border border-primary/50 font-mono-code text-xs neon-text animate-float" style={{ animationDelay: "0.5s" }}>
+            <div className="absolute -top-2 -right-2 px-3 py-1.5 rounded-lg bg-card border border-primary/60 font-mono-code text-xs text-primary shadow-[0_0_15px_hsl(var(--primary)/0.5)] animate-float" style={{ animationDelay: "0.5s" }}>
               Power BI
             </div>
-            <div className="absolute bottom-4 -left-4 px-3 py-1.5 rounded-lg bg-card border border-primary/50 font-mono-code text-xs neon-text animate-float" style={{ animationDelay: "1s" }}>
+            <div className="absolute bottom-4 -left-4 px-3 py-1.5 rounded-lg bg-card border border-accent-blue/60 font-mono-code text-xs text-accent-blue shadow-[0_0_15px_hsl(var(--accent-blue)/0.5)] animate-float" style={{ animationDelay: "1s" }}>
               Python
             </div>
-            <div className="absolute top-1/2 -right-6 px-3 py-1.5 rounded-lg bg-card border border-primary/50 font-mono-code text-xs neon-text animate-float" style={{ animationDelay: "1.5s" }}>
+            <div className="absolute top-1/2 -right-6 px-3 py-1.5 rounded-lg bg-card border border-accent-yellow/60 font-mono-code text-xs text-accent-yellow shadow-[0_0_15px_hsl(var(--accent-yellow)/0.5)] animate-float" style={{ animationDelay: "1.5s" }}>
               SQL
             </div>
-            <div className="absolute -bottom-2 right-10 px-3 py-1.5 rounded-lg bg-card border border-primary/50 font-mono-code text-xs neon-text animate-float" style={{ animationDelay: "2s" }}>
+            <div className="absolute -bottom-2 right-10 px-3 py-1.5 rounded-lg bg-card border border-primary/60 font-mono-code text-xs text-primary shadow-[0_0_15px_hsl(var(--primary)/0.5)] animate-float" style={{ animationDelay: "2s" }}>
               Grafana
             </div>
           </div>

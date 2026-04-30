@@ -1,21 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, ReactNode } from "react";
 
-/**
- * Wraps children in an IntersectionObserver-driven reveal.
- * Adds opacity + translate-y on scroll into view.
- */
-const Reveal = ({
-  children,
-  delay = 0,
-  className = "",
-  as: Tag = "div",
-}: {
-  children: React.ReactNode;
+type RevealProps = {
+  children: ReactNode;
   delay?: number;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
-}) => {
-  const ref = useRef<HTMLElement | null>(null);
+};
+
+/**
+ * IntersectionObserver-driven reveal wrapper.
+ * Fades and translates content up when scrolled into view.
+ */
+const Reveal = ({ children, delay = 0, className = "" }: RevealProps) => {
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -24,7 +20,7 @@ const Reveal = ({
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            (el as HTMLElement).style.transitionDelay = `${delay}ms`;
+            el.style.transitionDelay = `${delay}ms`;
             el.classList.add("is-visible");
             io.unobserve(el);
           }
@@ -36,14 +32,13 @@ const Reveal = ({
     return () => io.disconnect();
   }, [delay]);
 
-  // @ts-expect-error dynamic tag
   return (
-    <Tag
-      ref={ref as never}
+    <div
+      ref={ref}
       className={`opacity-0 translate-y-8 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] [&.is-visible]:opacity-100 [&.is-visible]:translate-y-0 ${className}`}
     >
       {children}
-    </Tag>
+    </div>
   );
 };
 

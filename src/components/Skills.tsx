@@ -1,82 +1,83 @@
-import { SectionHeader } from "./About";
 import { BarChart3, Brain, Code2, Database, LineChart, Server } from "lucide-react";
+import Reveal from "./Reveal";
+import { SectionHeader } from "./SectionHeader";
 
 const groups = [
   {
     icon: BarChart3,
     title: "BI & Visualisation",
-    items: ["Power BI (DAX, Power Query)", "Grafana (Dashboards, Alerting)", "Tableau", "Looker Studio", "Advanced Excel"],
+    items: ["Power BI · DAX · Power Query", "Grafana · Alerting", "Tableau", "Looker Studio", "Advanced Excel"],
   },
   {
     icon: Database,
     title: "Databases & SQL",
-    items: ["PostgreSQL", "InfluxDB (Flux, InfluxQL)", "MySQL", "MS SQL Server", "Snowflake (learning)"],
+    items: ["PostgreSQL", "InfluxDB · Flux · InfluxQL", "MySQL", "MS SQL Server", "Snowflake (learning)"],
   },
   {
     icon: Code2,
     title: "Programming & ETL",
-    items: ["Python (Pandas, NumPy, Matplotlib)", "Scikit-learn", "ETL Scripting", "Microsoft Fabric", "SSIS"],
+    items: ["Python · Pandas · NumPy", "Scikit-learn · Matplotlib", "ETL scripting", "Microsoft Fabric", "SSIS"],
   },
   {
     icon: Brain,
     title: "Analytics & ML",
-    items: ["IPMVP Regression", "Energy Forecasting", "Time-Series Analysis", "Clustering / EDA", "Predictive Modelling"],
+    items: ["IPMVP regression", "Energy forecasting", "Time-series analysis", "Clustering · EDA", "Predictive modelling"],
   },
   {
     icon: Server,
     title: "Domain & Tools",
-    items: ["BMS Systems", "ESG / ASHRAE Standards", "Azure", "Dimensional Modelling", "Real-time IoT Ingestion"],
+    items: ["BMS systems", "ESG · ASHRAE standards", "Azure", "Dimensional modelling", "Real-time IoT ingestion"],
   },
   {
     icon: LineChart,
-    title: "Currently Learning",
-    items: ["Snowflake", "PyTorch", "Advanced LLM Pipelines", "dbt", "MLOps"],
+    title: "Currently learning",
+    items: ["Snowflake", "PyTorch", "LLM pipelines", "dbt", "MLOps"],
   },
 ];
 
 const marqueeTags = [
   "Python", "SQL", "Power BI", "Grafana", "PostgreSQL", "InfluxDB", "Tableau", "Snowflake",
-  "Azure", "Pandas", "NumPy", "Scikit-learn", "DAX", "Power Query", "SSIS", "Microsoft Fabric",
-  "ETL", "IPMVP", "ESG", "IoT", "Time-Series", "Forecasting", "Clustering",
+  "Azure", "Pandas", "Scikit-learn", "DAX", "Power Query", "Microsoft Fabric", "ETL",
+  "IPMVP", "ESG", "IoT", "Time-Series", "Forecasting",
 ];
 
 const Skills = () => (
-  <section id="skills" className="relative py-24 bg-card/30">
+  <section id="skills" className="relative py-28">
     <div className="container mx-auto px-6">
-      <SectionHeader kicker="// 02" title="Tech Stack" />
+      <SectionHeader kicker="02 — Stack" title="Tools I" italic="actually use." />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {groups.map((g, i) => (
-          <div
-            key={g.title}
-            className="neon-card rounded-xl p-6 group animate-fade-in"
-            style={{ animationDelay: `${i * 0.08}s` }}
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 rounded-lg bg-primary/10 border border-primary/40 flex items-center justify-center text-primary group-hover:animate-glow-pulse">
+          <Reveal key={g.title} delay={i * 70} className="glass-card rounded-2xl p-6 group">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-11 h-11 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center text-primary-glow group-hover:scale-110 group-hover:bg-primary/30 transition-transform">
                 <g.icon className="w-5 h-5" />
               </div>
               <h3 className="font-display font-bold text-lg">{g.title}</h3>
             </div>
-            <ul className="space-y-2 font-mono-code text-sm text-muted-foreground">
+            <ul className="space-y-2 text-sm text-foreground/65">
               {g.items.map((it) => (
-                <li key={it} className="flex items-start gap-2">
-                  <span className="text-primary mt-1">▸</span>
+                <li key={it} className="flex items-start gap-2.5">
+                  <span className="text-primary-glow mt-1.5 text-[6px]">●</span>
                   <span>{it}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         ))}
       </div>
     </div>
 
-    {/* Infinite marquee */}
-    <div className="mt-16 relative overflow-hidden border-y border-primary/30 py-4 bg-background/60">
-      <div className="flex gap-6 w-max animate-marquee">
+    {/* marquee */}
+    <div className="mt-20 relative overflow-hidden border-y border-white/5 py-6">
+      <div className="marquee-track gap-10 px-4">
         {[...marqueeTags, ...marqueeTags].map((tag, i) => (
-          <span key={i} className="font-display text-2xl md:text-3xl font-black uppercase whitespace-nowrap text-foreground/30 hover:text-primary transition-colors">
-            {tag} <span className="text-primary mx-3">◆</span>
+          <span
+            key={i}
+            className="font-display text-3xl md:text-5xl font-bold uppercase whitespace-nowrap text-foreground/15 hover:text-foreground transition-colors"
+          >
+            {tag}
+            <span className="text-primary-glow mx-6">✦</span>
           </span>
         ))}
       </div>

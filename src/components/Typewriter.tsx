@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 const phrases = [
   "Data Analyst",
-  "BI & Analytics Engineer",
-  "Energy-Tech Specialist",
-  "IoT Time-Series Wizard",
-  "Power BI · Grafana · SQL",
+  "BI Engineer",
+  "IoT Storyteller",
+  "Energy-Tech Nerd",
+  "Pipeline Builder",
 ];
 
 const Typewriter = () => {
@@ -15,7 +15,7 @@ const Typewriter = () => {
 
   useEffect(() => {
     const current = phrases[i % phrases.length];
-    const speed = del ? 40 : 80;
+    const speed = del ? 35 : 75;
     const t = setTimeout(() => {
       if (!del) {
         const next = current.slice(0, text.length + 1);

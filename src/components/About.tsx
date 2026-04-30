@@ -1,64 +1,54 @@
 import { Award, Briefcase, GraduationCap, MapPin } from "lucide-react";
+import Reveal from "./Reveal";
+import { SectionHeader } from "./SectionHeader";
 
 const stats = [
-  { label: "Years Experience", value: "1+" },
-  { label: "Enterprise Clients", value: "5+" },
-  { label: "Hours Saved / Week", value: "10+" },
-  { label: "Energy Accuracy ↑", value: "15%" },
+  { value: "1+", label: "Years in production" },
+  { value: "5+", label: "Enterprise clients" },
+  { value: "10+", label: "Hrs saved / week" },
+  { value: "15%", label: "Energy accuracy ↑" },
 ];
 
 const About = () => (
-  <section id="about" className="relative py-24">
+  <section id="about" className="relative py-28">
     <div className="container mx-auto px-6">
-      <SectionHeader kicker="// 01" title="About Me" />
+      <SectionHeader kicker="01 — About" title="A short" italic="story." />
 
-      <div className="grid lg:grid-cols-5 gap-10 items-start">
-        <div className="lg:col-span-3 space-y-5 text-muted-foreground leading-relaxed animate-fade-in">
+      <div className="grid lg:grid-cols-12 gap-10 items-start">
+        <Reveal className="lg:col-span-7 space-y-6 text-lg leading-relaxed text-foreground/75">
           <p>
-            I'm a <span className="text-primary font-semibold">Data Analyst</span> with hands-on production experience in
-            energy-tech and Building Management Systems (BMS). I specialise in IoT time-series analytics, real-time
-            monitoring, ESG/IPMVP energy baseline modelling, and end-to-end BI pipelines across Power BI, Grafana, and
-            SQL.
+            I'm a <span className="text-foreground">Data Analyst</span> based in Pune, working at the intersection of
+            <span className="font-serif-italic text-primary-glow"> energy</span>, IoT, and business intelligence.
           </p>
           <p>
-            I've delivered measurable outcomes for enterprise clients across <span className="text-primary-glow">energy</span>,{" "}
-            <span className="text-primary-glow">real estate</span>, and <span className="text-primary-glow">smart-building</span>{" "}
-            domains. IIT Guwahati certified in Full Stack Data Science & AI, currently expanding into Snowflake and PyTorch.
+            At Integrated Active Monitoring I build real-time dashboards in Grafana and Power BI, design IPMVP-compliant
+            regression models for energy baselines, and engineer PostgreSQL ↔ Python ↔ InfluxDB pipelines that quietly
+            save my team double-digit hours each week.
+          </p>
+          <p className="text-foreground/60">
+            Off-screen I'm a curious learner — currently going deep on Snowflake, PyTorch, and modern data stack tooling.
           </p>
 
-          <ul className="grid sm:grid-cols-2 gap-3 pt-2 font-mono-code text-sm">
-            <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" /> Pune, India</li>
-            <li className="flex items-center gap-2"><Briefcase className="w-4 h-4 text-primary" /> Integrated Active Monitoring</li>
-            <li className="flex items-center gap-2"><GraduationCap className="w-4 h-4 text-primary" /> IIT Guwahati — DS & AI</li>
-            <li className="flex items-center gap-2"><Award className="w-4 h-4 text-primary" /> Employee of the Month — Nov 2025</li>
+          <ul className="grid sm:grid-cols-2 gap-3 pt-4 font-mono-code text-sm text-foreground/70">
+            <li className="flex items-center gap-2.5"><MapPin className="w-4 h-4 text-primary-glow" /> Pune, India</li>
+            <li className="flex items-center gap-2.5"><Briefcase className="w-4 h-4 text-primary-glow" /> Integrated Active Monitoring</li>
+            <li className="flex items-center gap-2.5"><GraduationCap className="w-4 h-4 text-primary-glow" /> IIT Guwahati — DS & AI</li>
+            <li className="flex items-center gap-2.5"><Award className="w-4 h-4 text-primary-glow" /> Employee of the Month · Nov 2025</li>
           </ul>
-        </div>
+        </Reveal>
 
-        <div className="lg:col-span-2 grid grid-cols-2 gap-4">
+        <div className="lg:col-span-5 grid grid-cols-2 gap-4">
           {stats.map((s, i) => (
-            <div
-              key={s.label}
-              className="neon-card rounded-xl p-5 text-center animate-scale-in"
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              <div className="font-display text-3xl md:text-4xl font-black neon-text">{s.value}</div>
-              <div className="font-mono-code text-xs text-muted-foreground mt-2 uppercase tracking-wider">{s.label}</div>
-            </div>
+            <Reveal key={s.label} delay={i * 80} className="glass-card rounded-2xl p-6 relative overflow-hidden">
+              <div className="font-display text-4xl md:text-5xl font-bold gradient-text">{s.value}</div>
+              <div className="mt-3 text-xs uppercase tracking-wider text-foreground/55 font-mono-code">{s.label}</div>
+              <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-primary/15 blur-2xl" />
+            </Reveal>
           ))}
         </div>
       </div>
     </div>
   </section>
-);
-
-export const SectionHeader = ({ kicker, title }: { kicker: string; title: string }) => (
-  <div className="mb-12">
-    <div className="font-mono-code text-primary text-sm tracking-widest mb-2">{kicker}</div>
-    <h2 className="font-display text-4xl md:text-5xl font-black neon-text inline-block">
-      {title}
-    </h2>
-    <div className="mt-4 h-px bg-gradient-to-r from-primary via-primary/40 to-transparent" />
-  </div>
 );
 
 export default About;

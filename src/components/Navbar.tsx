@@ -6,7 +6,7 @@ const links = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
+  { href: "#experience", label: "Work" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
@@ -23,40 +23,79 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/80 backdrop-blur-lg border-b border-primary/30 shadow-[0_0_20px_hsl(142_100%_50%/0.2)]" : "bg-transparent"
+      className={`fixed top-3 inset-x-3 md:inset-x-6 z-50 transition-all duration-500 rounded-2xl ${
+        scrolled ? "bg-black/60 backdrop-blur-xl border border-white/10 shadow-2xl" : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#home" className="flex items-center gap-2 group">
-          <img src={logo} alt="Mandar Hirphode logo" width={40} height={40} className="w-10 h-10 drop-shadow-[0_0_8px_hsl(var(--primary))] group-hover:drop-shadow-[0_0_14px_hsl(var(--accent-blue))] transition-all" />
-          <span className="font-display text-lg font-bold gradient-tri tracking-widest hidden sm:inline">MANDAR</span>
+      <nav className="flex items-center justify-between px-5 md:px-7 py-3">
+        <a href="#home" className="flex items-center gap-2.5 group" data-cursor="hover">
+          <img
+            src={logo}
+            alt="Mandar Hirphode"
+            width={32}
+            height={32}
+            className="w-8 h-8 transition-transform duration-500 group-hover:rotate-[20deg]"
+          />
+          <span className="font-display font-bold tracking-tight text-sm md:text-base">
+            Mandar <span className="font-serif-italic text-primary-glow">Hirphode</span>
+          </span>
         </a>
-        <ul className="hidden md:flex gap-8 font-mono-code text-sm">
+
+        <ul className="hidden md:flex gap-1 font-display text-sm">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="relative text-foreground/80 hover:text-primary transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-primary after:shadow-[0_0_10px_hsl(var(--primary))] hover:after:w-full after:transition-all after:duration-300"
+                data-cursor="hover"
+                className="px-3 py-1.5 rounded-full text-foreground/70 hover:text-foreground hover:bg-white/5 transition-colors"
               >
                 {l.label}
               </a>
             </li>
           ))}
         </ul>
-        <button className="md:hidden text-primary" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+
+        <a
+          href="/Mandar_Hirphode_Resume.pdf"
+          download
+          data-cursor="hover"
+          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground font-display font-semibold text-sm shine hover:shadow-[0_0_30px_hsl(var(--primary)/0.7)] transition-all"
+        >
+          Resume ↗
+        </a>
+
+        <button
+          className="md:hidden text-foreground"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+          data-cursor="hover"
+        >
           {open ? <X /> : <Menu />}
         </button>
       </nav>
       {open && (
-        <ul className="md:hidden flex flex-col gap-4 px-6 pb-6 font-mono-code bg-background/95 border-t border-primary/30 animate-fade-in">
+        <ul className="md:hidden flex flex-col gap-1 px-5 pb-4 font-display animate-fade-in">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} onClick={() => setOpen(false)} className="block py-2 text-foreground/80 hover:text-primary">
+              <a
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block py-2 px-3 rounded-lg text-foreground/80 hover:bg-white/5"
+              >
                 {l.label}
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href="/Mandar_Hirphode_Resume.pdf"
+              download
+              onClick={() => setOpen(false)}
+              className="block mt-1 py-2 px-3 rounded-lg bg-primary text-primary-foreground font-semibold text-center"
+            >
+              Download Resume
+            </a>
+          </li>
         </ul>
       )}
     </header>

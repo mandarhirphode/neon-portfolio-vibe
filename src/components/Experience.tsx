@@ -45,7 +45,7 @@ const Experience = () => (
 
       <div className="space-y-4 max-w-5xl">
         {jobs.map((job, i) => (
-          <Reveal key={job.company} delay={i * 100}>
+          <Reveal key={job.company} delay={i * 250}>
             <article className="glass-card rounded-2xl p-6 md:p-8 grid md:grid-cols-12 gap-6 group">
               <div className="md:col-span-4">
                 <div className="font-mono-code text-xs text-primary-glow tracking-widest mb-2">{job.period}</div>

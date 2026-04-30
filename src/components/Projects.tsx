@@ -48,7 +48,7 @@ const Projects = () => (
 
       <div className="grid md:grid-cols-2 gap-5">
         {projects.map((p, i) => (
-          <Reveal key={p.title} delay={i * 70}>
+          <Reveal key={p.title} delay={i * 220}>
             <a
               href={p.href}
               target="_blank"

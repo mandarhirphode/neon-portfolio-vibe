@@ -1,6 +1,6 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import photo from "@/assets/mandar-photo.jpg";
+import photo from "@/assets/mandar-photo.png";
 import Typewriter from "./Typewriter";
 
 const Hero = () => {

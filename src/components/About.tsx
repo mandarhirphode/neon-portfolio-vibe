@@ -39,7 +39,7 @@ const About = () => (
 
         <div className="lg:col-span-5 grid grid-cols-2 gap-4">
           {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 80} className="glass-card rounded-2xl p-6 relative overflow-hidden">
+            <Reveal key={s.label} delay={i * 200} className="glass-card rounded-2xl p-6 relative overflow-hidden">
               <div className="font-display text-4xl md:text-5xl font-bold gradient-text">{s.value}</div>
               <div className="mt-3 text-xs uppercase tracking-wider text-foreground/55 font-mono-code">{s.label}</div>
               <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-primary/15 blur-2xl" />

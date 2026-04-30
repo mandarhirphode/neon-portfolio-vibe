@@ -87,7 +87,7 @@ const Hero = () => {
 
         {/* Right photo card */}
         <div className="lg:col-span-5 relative animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          <div className="relative aspect-[4/5] max-w-md mx-auto">
+          <div className="relative aspect-[4/5] max-w-[300px] md:max-w-[340px] mx-auto">
             {/* Decorative glow */}
             <div className="absolute -inset-8 bg-primary/30 blur-3xl rounded-full opacity-60 animate-pulse-soft" />
 

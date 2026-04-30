@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import About from "@/components/About";
+import CodeRain from "@/components/CodeRain";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
@@ -31,6 +32,7 @@ const Index = () => {
 
   return (
     <main className="relative">
+      <CodeRain />
       <Navbar />
       <Hero />
       <About />

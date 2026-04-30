@@ -150,11 +150,9 @@
   }
   .shine:hover::before { transform: translateX(100%); }
 
-  /* Marquee */
-  .marquee-track {
-    display: flex;
-    width: max-content;
-    animation: marquee-x 40s linear infinite;
+  /* Animated tag pop with continuous pulse */
+  .tag-pop {
+    animation: tag-float 4s ease-in-out infinite;
   }
 }
 
@@ -167,7 +165,7 @@
   0% { transform: translateY(110%); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
-@keyframes marquee-x {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+@keyframes tag-float {
+  0%, 100% { transform: translateY(0); box-shadow: 0 0 0 hsl(var(--primary) / 0); }
+  50% { transform: translateY(-4px); box-shadow: 0 6px 20px hsl(var(--primary) / 0.15); }
 }

@@ -48,7 +48,7 @@ const Skills = () => (
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {groups.map((g, i) => (
-          <Reveal key={g.title} delay={i * 70} className="glass-card rounded-2xl p-6 group">
+          <Reveal key={g.title} delay={i * 220} className="glass-card rounded-2xl p-6 group">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center text-primary-glow group-hover:scale-110 group-hover:bg-primary/30 transition-transform">
                 <g.icon className="w-5 h-5" />
@@ -68,19 +68,21 @@ const Skills = () => (
       </div>
     </div>
 
-    {/* marquee */}
-    <div className="mt-20 relative overflow-hidden border-y border-white/5 py-6">
-      <div className="marquee-track gap-10 px-4">
-        {[...marqueeTags, ...marqueeTags].map((tag, i) => (
+    {/* Animated tag cloud */}
+    <div className="container mx-auto px-6 mt-20">
+      <Reveal className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+        {marqueeTags.map((tag, i) => (
           <span
-            key={i}
-            className="font-display text-3xl md:text-5xl font-bold uppercase whitespace-nowrap text-foreground/15 hover:text-foreground transition-colors"
+            key={tag}
+            className="tag-pop px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm font-mono-code text-sm text-foreground/70 hover:text-primary-glow hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-1 transition-all cursor-default"
+            style={{ animationDelay: `${i * 0.08}s` }}
+            data-cursor="hover"
           >
+            <span className="text-primary-glow mr-1.5">✦</span>
             {tag}
-            <span className="text-primary-glow mx-6">✦</span>
           </span>
         ))}
-      </div>
+      </Reveal>
     </div>
   </section>
 );

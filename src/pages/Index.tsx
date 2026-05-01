@@ -13,9 +13,9 @@ import Skills from "@/components/Skills";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Mandar Hirphode — Data Analyst | BI, IoT & Energy Intelligence";
+    document.title = "Mandar Hirphode — Data Analyst & ML Engineer | BI, IoT & Predictive Models";
     const desc =
-      "Data Analyst building real-time IoT dashboards, IPMVP energy models and BI pipelines in Power BI, Grafana, Python and SQL.";
+      "Data Analyst & Machine Learning Engineer building real-time IoT dashboards, predictive energy models and ML pipelines in Python, PyTorch, Power BI and SQL.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");

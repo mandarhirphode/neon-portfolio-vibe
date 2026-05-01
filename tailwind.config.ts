@@ -48,7 +48,7 @@ export default {
           "66%": { transform: "translate(30px, -30px) scale(0.9)" },
         },
         "float": { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-14px)" } },
-        "spin-slow": { "0%": { transform: "rotate(0deg)" }, "100%": { transform: "rotate(360deg)" } },
+        "spin-slow": { "0%": { transform: "rotate(0deg)" }, "100%": { transform: "rotate(-360deg)" } },
         "blink": { "0%, 50%": { opacity: "1" }, "51%, 100%": { opacity: "0" } },
         "pulse-soft": { "0%, 100%": { opacity: "0.6" }, "50%": { opacity: "1" } },
       },

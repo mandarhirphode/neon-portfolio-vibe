@@ -17,16 +17,18 @@ const About = () => (
       <div className="grid lg:grid-cols-12 gap-10 items-start">
         <Reveal className="lg:col-span-7 space-y-6 text-lg leading-relaxed text-foreground/75">
           <p>
-            I'm a <span className="text-foreground">Data Analyst</span> based in Pune, working at the intersection of
-            <span className="font-serif-italic text-primary-glow"> energy</span>, IoT, and business intelligence.
+            I'm a <span className="text-foreground">Data Analyst & ML Engineer</span> based in Pune, working at the
+            intersection of <span className="font-serif-italic text-primary-glow"> data, machine learning</span> and
+            real-world IoT.
           </p>
           <p>
             At Integrated Active Monitoring I build real-time dashboards in Grafana and Power BI, design IPMVP-compliant
-            regression models for energy baselines, and engineer PostgreSQL ↔ Python ↔ InfluxDB pipelines that quietly
-            save my team double-digit hours each week.
+            regression & forecasting models for energy baselines, and engineer PostgreSQL ↔ Python ↔ InfluxDB pipelines
+            that feed both BI dashboards and ML workflows — saving my team double-digit hours each week.
           </p>
           <p className="text-foreground/60">
-            Off-screen I'm a curious learner — currently going deep on Snowflake, PyTorch, and modern data stack tooling.
+            I love the full loop: from raw data → clean pipelines → predictive models → decisions. Currently going deep
+            on PyTorch, MLOps, LLM pipelines and Snowflake.
           </p>
 
           <ul className="grid sm:grid-cols-2 gap-3 pt-4 font-mono-code text-sm text-foreground/70">

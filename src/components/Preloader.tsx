@@ -489,8 +489,6 @@ const Pipeline = ({
             filter="url(#soft-glow)"
             style={{
               offsetPath: `path("${getPathD(p.src, sources, cleanX, transformX, storeX, analyzeX, outputX, midY)}")`,
-              // @ts-expect-error legacy property name for Safari
-              motionPath: `path("${getPathD(p.src, sources, cleanX, transformX, storeX, analyzeX, outputX, midY)}")`,
               animation: `${p.invalid ? "flow-fade" : "flow-1"} ${p.duration}ms ${p.startDelay}ms linear infinite`,
             }}
           />

@@ -6,6 +6,7 @@ import CustomCursor from "@/components/CustomCursor";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Preloader from "@/components/Preloader";
 import Projects from "@/components/Projects";
 import ScrollProgress from "@/components/ScrollProgress";
 import Skills from "@/components/Skills";
@@ -35,6 +36,7 @@ const Index = () => {
 
   return (
     <main className="relative">
+      <Preloader />
       <AmbientBackground />
       <ScrollProgress />
       <CustomCursor />

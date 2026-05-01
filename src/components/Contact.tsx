@@ -81,7 +81,6 @@ const Contact = () => (
       <footer className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row gap-3 items-center justify-between font-mono-code text-xs text-foreground/40">
         <div>© {new Date().getFullYear()} Mandar Hirphode</div>
         <div className="font-serif-italic text-foreground/60">data is the new oxygen</div>
-        <div>Built with React · Tailwind</div>
       </footer>
     </div>
   </section>

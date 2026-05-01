@@ -73,7 +73,7 @@ const Preloader = () => {
       <div className="relative w-[min(960px,94vw)]">
         {/* Header */}
         <div className="flex items-center gap-3 mb-5">
-          <img src={logo} alt="MH" className="w-9 h-9 drop-shadow-[0_0_20px_hsl(var(--primary)/0.7)]" />
+          <img src={logo} alt="MH" className="w-9 h-9 drop-shadow-[0_0_6px_hsl(var(--primary)/0.25)]" />
           <div className="font-display font-bold tracking-tight">
             Mandar <span className="font-serif-italic text-primary-glow">Hirphode</span>
           </div>

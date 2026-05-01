@@ -16,29 +16,29 @@ const groups = [
   {
     icon: Code2,
     title: "Programming & ETL",
-    items: ["Python · Pandas · NumPy", "Scikit-learn · Matplotlib", "ETL scripting", "Microsoft Fabric", "SSIS"],
+    items: ["Python · Pandas · NumPy", "ETL scripting", "Microsoft Fabric", "SSIS", "REST APIs"],
   },
   {
     icon: Brain,
-    title: "Analytics & ML",
-    items: ["IPMVP regression", "Energy forecasting", "Time-series analysis", "Clustering · EDA", "Predictive modelling"],
+    title: "Machine Learning",
+    items: ["Scikit-learn · PyTorch", "Regression · Classification", "Time-series forecasting", "Clustering · EDA", "Recommender systems"],
   },
   {
     icon: Server,
-    title: "Domain & Tools",
-    items: ["BMS systems", "ESG · ASHRAE standards", "Azure", "Dimensional modelling", "Real-time IoT ingestion"],
+    title: "MLOps & Deployment",
+    items: ["Model serving · Streamlit", "Feature pipelines", "Azure ML", "Experiment tracking", "Real-time IoT inference"],
   },
   {
     icon: LineChart,
     title: "Currently learning",
-    items: ["Snowflake", "PyTorch", "LLM pipelines", "dbt", "MLOps"],
+    items: ["LLM pipelines · RAG", "Deep learning (PyTorch)", "MLOps · dbt", "Snowflake", "Vector databases"],
   },
 ];
 
 const marqueeTags = [
-  "Python", "SQL", "Power BI", "Grafana", "PostgreSQL", "InfluxDB", "Tableau", "Snowflake",
-  "Azure", "Pandas", "Scikit-learn", "DAX", "Power Query", "Microsoft Fabric", "ETL",
-  "IPMVP", "ESG", "IoT", "Time-Series", "Forecasting",
+  "Python", "SQL", "Power BI", "Grafana", "PostgreSQL", "Snowflake", "Azure",
+  "Pandas", "NumPy", "Scikit-learn", "PyTorch", "TensorFlow", "Streamlit",
+  "ETL", "Forecasting", "Classification", "Clustering", "NLP", "Recommenders", "MLOps",
 ];
 
 const Skills = () => (

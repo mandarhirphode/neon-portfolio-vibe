@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import logo from "@/assets/mh-logo.png";
+import { useEffect, useState } from "react";
+import MHLogo from "./MHLogo";
 
 /**
  * Multi-act preloader story:
@@ -7,20 +7,16 @@ import logo from "@/assets/mh-logo.png";
  *  2. Data Analysis    — charts forming, KPIs counting
  *  3. ML / DL          — neural net firing, loss converging
  *  4. LLM              — chat: "Creating a portfolio…" → tokens stream
- *  5. Thinking         — animated dots / shimmer
- *  6. Loading          — circular 0 → 100 progress
- *  7. Reveal           — fade out
+ *  5. Reveal           — fade out
  */
 
-type Act = "engineering" | "analysis" | "ml" | "llm" | "thinking" | "loading";
+type Act = "engineering" | "analysis" | "ml" | "llm";
 
 const SCRIPT: { act: Act; ms: number }[] = [
   { act: "engineering", ms: 2400 },
   { act: "analysis", ms: 2200 },
   { act: "ml", ms: 2400 },
   { act: "llm", ms: 2600 },
-  { act: "thinking", ms: 1400 },
-  { act: "loading", ms: 2200 },
 ];
 
 const Preloader = () => {
@@ -46,14 +42,12 @@ const Preloader = () => {
 
   if (hidden) return null;
 
-  const current = SCRIPT[actIdx]?.act ?? "loading";
+  const current = SCRIPT[actIdx]?.act ?? "llm";
   const stepLabels: Record<Act, string> = {
     engineering: "01 · Data Engineering",
     analysis: "02 · Data Analysis",
     ml: "03 · ML / Deep Learning",
     llm: "04 · LLM",
-    thinking: "05 · Thinking",
-    loading: "06 · Loading Portfolio",
   };
 
   return (
@@ -73,7 +67,7 @@ const Preloader = () => {
       <div className="relative w-[min(960px,94vw)]">
         {/* Header */}
         <div className="flex items-center gap-3 mb-5">
-          <img src={logo} alt="MH" className="w-9 h-9 drop-shadow-[0_0_6px_hsl(var(--primary)/0.25)]" />
+          <MHLogo className="h-9 w-9" />
           <div className="font-display font-bold tracking-tight">
             Mandar <span className="font-serif-italic text-primary-glow">Hirphode</span>
           </div>
@@ -117,8 +111,6 @@ const Preloader = () => {
             {current === "analysis" && <ActAnalysis key="ana" />}
             {current === "ml" && <ActML key="ml" />}
             {current === "llm" && <ActLLM key="llm" />}
-            {current === "thinking" && <ActThinking key="th" />}
-            {current === "loading" && <ActLoading key="ld" />}
           </div>
         </div>
 
@@ -146,11 +138,6 @@ const Preloader = () => {
         @keyframes pl-token {
           from { opacity: 0; transform: translateY(4px); filter: blur(4px); }
           to { opacity: 1; transform: translateY(0); filter: blur(0); }
-        }
-        @keyframes pl-dot { 0%,80%,100%{opacity:.2;transform:translateY(0)} 40%{opacity:1;transform:translateY(-4px)} }
-        @keyframes pl-shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
         }
       `}</style>
     </div>
@@ -389,87 +376,6 @@ const ActLLM = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
-
-/* ───────────────── Act 5: Thinking ───────────────── */
-
-const ActThinking = () => (
-  <div className="flex flex-col items-center gap-5 animate-fade-in">
-    <div className="relative">
-      <div className="w-24 h-24 rounded-full border border-primary/40 animate-spin-slow" style={{ animationDuration: "6s" }}>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-primary-glow shadow-[0_0_18px_hsl(var(--primary))]" />
-      </div>
-      <div className="absolute inset-2 rounded-full border border-primary/30" style={{ animation: "spin-slow 4s linear infinite reverse" }}>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary" />
-      </div>
-      <div className="absolute inset-0 flex items-center justify-center font-mono-code text-[10px] text-primary-glow uppercase tracking-widest">
-        thinking
-      </div>
-    </div>
-    <div className="font-display text-2xl bg-gradient-to-r from-foreground/30 via-foreground to-foreground/30 bg-[length:200%_100%] bg-clip-text text-transparent"
-      style={{ animation: "pl-shimmer 1.6s linear infinite" }}>
-      Composing your experience
-    </div>
-    <div className="flex gap-1.5">
-      {[0,1,2].map(i => (
-        <span key={i} className="w-2 h-2 rounded-full bg-primary-glow"
-          style={{ animation: `pl-dot 1.2s ${i * 0.18}s infinite` }} />
-      ))}
-    </div>
-  </div>
-);
-
-/* ───────────────── Act 6: Loading 0 → 100 ───────────────── */
-
-const ActLoading = () => {
-  const [pct, setPct] = useState(0);
-  const startRef = useRef<number | null>(null);
-  const DUR = 2000;
-
-  useEffect(() => {
-    let raf = 0;
-    const tick = (t: number) => {
-      if (startRef.current == null) startRef.current = t;
-      const e = t - startRef.current;
-      const p = Math.min(100, (e / DUR) * 100);
-      setPct(p);
-      if (p < 100) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
-  const R = 78;
-  const C = 2 * Math.PI * R;
-  const offset = C - (pct / 100) * C;
-
-  return (
-    <div className="flex flex-col items-center gap-5 animate-fade-in">
-      <div className="relative w-[200px] h-[200px]">
-        <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90">
-          <defs>
-            <linearGradient id="ld-grad" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stopColor="hsl(var(--primary-deep))" />
-              <stop offset="50%" stopColor="hsl(var(--primary))" />
-              <stop offset="100%" stopColor="hsl(var(--primary-glow))" />
-            </linearGradient>
-          </defs>
-          <circle cx="100" cy="100" r={R} fill="none" stroke="hsl(var(--border))" strokeWidth="6" />
-          <circle
-            cx="100" cy="100" r={R} fill="none"
-            stroke="url(#ld-grad)" strokeWidth="6" strokeLinecap="round"
-            strokeDasharray={C} strokeDashoffset={offset}
-            style={{ filter: "drop-shadow(0 0 10px hsl(var(--primary) / 0.7))", transition: "stroke-dashoffset 80ms linear" }}
-          />
-        </svg>
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <div className="font-display text-5xl font-bold gradient-text tabular-nums">{Math.floor(pct)}</div>
-          <div className="font-mono-code text-[10px] text-foreground/50 uppercase tracking-widest">percent</div>
-        </div>
-      </div>
-      <div className="font-mono-code text-xs text-foreground/60">› Mounting portfolio…</div>
     </div>
   );
 };

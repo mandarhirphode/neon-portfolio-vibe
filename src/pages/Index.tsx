@@ -6,6 +6,7 @@ import CustomCursor from "@/components/CustomCursor";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import PortfolioChatbot from "@/components/PortfolioChatbot";
 import Preloader from "@/components/Preloader";
 import Projects from "@/components/Projects";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -47,6 +48,7 @@ const Index = () => {
       <Experience />
       <Projects />
       <Contact />
+      <PortfolioChatbot />
     </main>
   );
 };

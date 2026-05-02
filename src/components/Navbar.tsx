@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import logo from "@/assets/mh-logo.png";
+import MHLogo from "./MHLogo";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -29,13 +29,7 @@ const Navbar = () => {
     >
       <nav className="flex items-center justify-between px-5 md:px-7 py-3">
         <a href="#home" className="flex items-center gap-2.5 group" data-cursor="hover">
-          <img
-            src={logo}
-            alt="Mandar Hirphode"
-            width={32}
-            height={32}
-            className="w-8 h-8 transition-transform duration-500 group-hover:rotate-[20deg]"
-          />
+          <MHLogo className="h-8 w-8 transition-transform duration-500 group-hover:rotate-[20deg]" />
           <span className="font-display font-bold tracking-tight text-sm md:text-base">
             Mandar <span className="font-serif-italic text-primary-glow">Hirphode</span>
           </span>

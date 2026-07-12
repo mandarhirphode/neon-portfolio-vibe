@@ -14,7 +14,7 @@ const Hero = () => {
           <div className="reveal-mask">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-mono-code">
               <Sparkles className="w-3.5 h-3.5 text-primary-glow" />
-              <span className="text-foreground/80">Open to Data Analyst & ML roles</span>
+              <span className="text-foreground/80">Open to Data Analyst & BI roles</span>
               <span className="w-1.5 h-1.5 rounded-full bg-primary-glow animate-pulse-soft" />
             </div>
           </div>

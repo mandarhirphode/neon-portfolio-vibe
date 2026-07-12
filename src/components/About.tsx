@@ -3,10 +3,10 @@ import Reveal from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
 const stats = [
-  { value: "1+", label: "Years in production" },
-  { value: "5+", label: "Enterprise clients" },
-  { value: "10+", label: "Hrs saved / week" },
-  { value: "15%", label: "Energy accuracy ↑" },
+  { value: "2+", label: "Years in production" },
+  { value: "20+", label: "Enterprise clients" },
+  { value: "<1%", label: "Data error rate" },
+  { value: "85-93%", label: "Forecast accuracy" },
 ];
 
 const About = () => (
@@ -17,18 +17,18 @@ const About = () => (
       <div className="grid lg:grid-cols-12 gap-10 items-start">
         <Reveal className="lg:col-span-7 space-y-6 text-lg leading-relaxed text-foreground/75">
           <p>
-            I'm a <span className="text-foreground">Data Analyst & ML Engineer</span> based in Pune, working at the
-            intersection of <span className="font-serif-italic text-primary-glow"> data, machine learning</span> and
-            real-world IoT.
+            I'm a <span className="text-foreground">Data Analyst</span> based in Pune, turning
+            <span className="font-serif-italic text-primary-glow"> SQL, Python & BI dashboards</span> into decisions
+            for enterprise clients across BFSI, Financial Services, Retail and Industrial IoT.
           </p>
           <p>
-            At Integrated Active Monitoring I build real-time dashboards in Grafana and Power BI, design IPMVP-compliant
-            regression & forecasting models for energy baselines, and engineer PostgreSQL ↔ Python ↔ InfluxDB pipelines
-            that feed both BI dashboards and ML workflows — saving my team double-digit hours each week.
+            At Integrated Active Monitoring I own analytics across 3 enterprise accounts — cutting data error rates
+            from ~8% to under 1%, shrinking MIS turnaround from 2 days to same-day via Python + n8n automation, and
+            delivering 10-12% energy savings through IPMVP regression forecasting at 85-93% accuracy.
           </p>
           <p className="text-foreground/60">
-            I love the full loop: from raw data → clean pipelines → predictive models → decisions. Currently going deep
-            on PyTorch, MLOps, LLM pipelines and Snowflake.
+            GenAI practitioner shipping LangChain + RAG + ChromaDB apps on top of Llama 3. IIT Guwahati certified,
+            Employee of the Month 2025, and always building the next dashboard, pipeline or model.
           </p>
 
           <ul className="grid sm:grid-cols-2 gap-3 pt-4 font-mono-code text-sm text-foreground/70">

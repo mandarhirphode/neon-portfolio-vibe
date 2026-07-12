@@ -4,40 +4,40 @@ import { SectionHeader } from "./SectionHeader";
 
 const projects = [
   {
+    title: "GenAI LinkedIn Post Generator",
+    desc: "End-to-end GenAI app that generates on-brand LinkedIn posts via RAG — ChromaDB vector store, top-k retrieval, and a LangChain prompt chain calling Llama 3 through ChatGroq. Streamlit UI.",
+    tags: ["LangChain", "RAG", "ChromaDB", "Llama 3", "Streamlit"],
+    href: "https://github.com/mandarhirphode",
+  },
+  {
+    title: "IPMVP Energy Forecasting System",
+    desc: "ML-powered energy forecasting on daily IoT sensor streams across 50+ enterprise clients. Regression models at 85-93% accuracy driving 10-12% verified energy savings.",
+    tags: ["Python", "Scikit-learn", "PostgreSQL", "InfluxDB"],
+    href: "https://github.com/mandarhirphode",
+  },
+  {
+    title: "BMS Reporting Automation Platform",
+    desc: "Zero-touch reporting platform replacing 5-7 manual daily reports across 20+ clients. Multi-source REST APIs → PostgreSQL with n8n orchestration — 2 days to same-day.",
+    tags: ["Python", "n8n", "PostgreSQL", "REST APIs"],
+    href: "https://github.com/mandarhirphode",
+  },
+  {
+    title: "Financial MIS Dashboard Suite",
+    desc: "Excel + Power BI dashboards tracking AUM, SIP inflows, insurance renewals and portfolio performance across 50+ client accounts for a Motilal Oswal partner.",
+    tags: ["Power BI", "DAX", "Advanced Excel", "Power Query"],
+    href: "https://github.com/mandarhirphode",
+  },
+  {
     title: "Croma Retail Data Warehouse",
-    desc: "End-to-end Snowflake + Azure warehouse with Snowpipe ingestion, dimensional modelling, and KPI analytics for sales, inventory & CLV.",
+    desc: "Snowflake + Azure warehouse with Snowpipe ingestion, dimensional modelling and KPI analytics for sales, inventory and CLV.",
     tags: ["Snowflake", "Azure", "Snowpipe", "Dimensional Modelling"],
     href: "https://github.com/mandarhirphode",
   },
   {
-    title: "End-to-End Analytics Pipeline",
-    desc: "Python → SQL → Power BI pipeline delivering real-time business insights — boosted decision-making efficiency by 20%.",
-    tags: ["Python", "SQL", "Power BI", "ETL"],
-    href: "https://github.com/mandarhirphode",
-  },
-  {
     title: "Movie Recommender System",
-    desc: "Content-based recommender using TF-IDF and cosine similarity at 85% accuracy. Streamlit prototype + A/B logging.",
+    desc: "Content-based recommender using TF-IDF and cosine similarity at 85% accuracy. Streamlit prototype with A/B logging.",
     tags: ["Python", "Scikit-learn", "Streamlit", "TF-IDF"],
     href: "https://github.com/mandyhirphode/movie_recommender_system",
-  },
-  {
-    title: "Global Terrorism — EDA",
-    desc: "EDA, dashboards and derived metrics for trend analysis on the Global Terrorism dataset.",
-    tags: ["Python", "Pandas", "EDA", "Power BI"],
-    href: "https://github.com/mandyhirphode/EDA_on_global_terrorism_data-",
-  },
-  {
-    title: "Amazon Sales — Dashboards & Forecasts",
-    desc: "Power BI dashboards combined with short-term forecasting models for sales planning and inventory decisions.",
-    tags: ["Power BI", "Forecasting", "DAX"],
-    href: "https://github.com/mandyhirphode/Amazon-Sales-Analysis-Dashboard",
-  },
-  {
-    title: "IPL & Play Store EDA",
-    desc: "Trend analysis, rating patterns and match performance insights using Python — uncovering behavioural signals.",
-    tags: ["Python", "Pandas", "Matplotlib"],
-    href: "https://github.com/mandarhirphode",
   },
 ];
 

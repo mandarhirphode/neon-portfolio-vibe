@@ -28,12 +28,6 @@ const projects = [
     href: "https://github.com/mandarhirphode",
   },
   {
-    title: "Croma Retail Data Warehouse",
-    desc: "Snowflake + Azure warehouse with Snowpipe ingestion, dimensional modelling and KPI analytics for sales, inventory and CLV.",
-    tags: ["Snowflake", "Azure", "Snowpipe", "Dimensional Modelling"],
-    href: "https://github.com/mandarhirphode",
-  },
-  {
     title: "Movie Recommender System",
     desc: "Content-based recommender using TF-IDF and cosine similarity at 85% accuracy. Streamlit prototype with A/B logging.",
     tags: ["Python", "Scikit-learn", "Streamlit", "TF-IDF"],

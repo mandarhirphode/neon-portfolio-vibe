@@ -140,13 +140,13 @@ const Hero = () => {
               className="absolute -right-4 bottom-32 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 font-mono-code text-xs animate-float"
               style={{ animationDelay: "1.2s" }}
             >
-              🧠 PyTorch
+              🦜 LangChain
             </div>
             <div
               className="absolute -left-8 bottom-16 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 font-mono-code text-xs animate-float"
               style={{ animationDelay: "1.8s" }}
             >
-              🤖 ML Ops
+              🗃️ SQL
             </div>
           </div>
         </div>

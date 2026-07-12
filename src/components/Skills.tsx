@@ -1,44 +1,44 @@
-import { BarChart3, Brain, Code2, Database, LineChart, Server } from "lucide-react";
+import { BarChart3, Brain, Code2, Database, LineChart, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import { SectionHeader } from "./SectionHeader";
 
 const groups = [
   {
-    icon: BarChart3,
-    title: "BI & Visualisation",
-    items: ["Power BI · DAX · Power Query", "Grafana · Alerting", "Tableau", "Looker Studio", "Advanced Excel"],
-  },
-  {
     icon: Database,
-    title: "Databases & SQL",
-    items: ["PostgreSQL", "InfluxDB · Flux · InfluxQL", "MySQL", "MS SQL Server", "Snowflake (learning)"],
+    title: "SQL & Databases",
+    items: ["CTEs · Window Functions · Joins", "Query Optimisation", "PostgreSQL · MS SQL · MySQL", "Snowflake", "InfluxDB · Flux · InfluxQL"],
   },
   {
     icon: Code2,
-    title: "Programming & ETL",
-    items: ["Python · Pandas · NumPy", "ETL scripting", "Microsoft Fabric", "SSIS", "REST APIs"],
+    title: "Programming & Stats",
+    items: ["Python · Pandas · NumPy", "Scikit-learn", "Statistical Analysis · EDA", "Regression · Classification", "Time-Series Forecasting"],
+  },
+  {
+    icon: BarChart3,
+    title: "BI & Visualisation",
+    items: ["Power BI · DAX · Semantic Modeling", "Grafana · Alerting", "Tableau", "Looker Studio · Metabase", "Advanced Excel · Power Query"],
+  },
+  {
+    icon: Sparkles,
+    title: "GenAI",
+    items: ["LangChain", "RAG pipelines", "ChromaDB (Vector DB)", "ChatGroq · Llama 3", "Prompt Engineering"],
   },
   {
     icon: Brain,
-    title: "Machine Learning",
-    items: ["Scikit-learn · PyTorch", "Regression · Classification", "Time-series forecasting", "Clustering · EDA", "Recommender systems"],
-  },
-  {
-    icon: Server,
-    title: "MLOps & Deployment",
-    items: ["Model serving · Streamlit", "Feature pipelines", "Azure ML", "Experiment tracking", "Real-time IoT inference"],
+    title: "Reporting & Automation",
+    items: ["ETL Pipelines · SSIS", "n8n Workflow Automation", "REST API Integration", "Microsoft Fabric", "Excel Macros · Templates"],
   },
   {
     icon: LineChart,
-    title: "Currently learning",
-    items: ["LLM pipelines · RAG", "Deep learning (PyTorch)", "MLOps · dbt", "Snowflake", "Vector databases"],
+    title: "Domain & Tools",
+    items: ["BFSI · Investments · Insurance", "Energy Analytics · IoT / BMS", "Retail Analytics", "Git · GitHub · Streamlit", "Azure DP-900 · PL-300 (WIP)"],
   },
 ];
 
 const marqueeTags = [
-  "Python", "SQL", "Power BI", "Grafana", "PostgreSQL", "Snowflake", "Azure",
-  "Pandas", "NumPy", "Scikit-learn", "PyTorch", "TensorFlow", "Streamlit",
-  "ETL", "Forecasting", "Classification", "Clustering", "NLP", "Recommenders", "MLOps",
+  "SQL", "Python", "Power BI", "Grafana", "PostgreSQL", "Snowflake", "InfluxDB",
+  "Pandas", "Scikit-learn", "LangChain", "RAG", "ChromaDB", "Llama 3",
+  "n8n", "SSIS", "Microsoft Fabric", "DAX", "Streamlit", "Forecasting", "IPMVP",
 ];
 
 const Skills = () => (

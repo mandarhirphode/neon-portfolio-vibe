@@ -14,7 +14,7 @@ const Hero = () => {
           <div className="reveal-mask">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-mono-code">
               <Sparkles className="w-3.5 h-3.5 text-primary-glow" />
-              <span className="text-foreground/80">Open to Data Analyst & ML roles</span>
+              <span className="text-foreground/80">Open to Data Analyst & BI roles</span>
               <span className="w-1.5 h-1.5 rounded-full bg-primary-glow animate-pulse-soft" />
             </div>
           </div>
@@ -41,9 +41,9 @@ const Hero = () => {
           </div>
 
           <p className="text-foreground/60 max-w-xl leading-relaxed text-pretty reveal-mask" style={{ animationDelay: "0.5s" }}>
-            Hey, I'm <span className="text-foreground font-medium">Mandar</span> — a data analyst & ML engineer building
-            real-time IoT dashboards, predictive energy models, and end-to-end ML pipelines for enterprise clients in
-            Pune, India.
+            Hey, I'm <span className="text-foreground font-medium">Mandar</span> — a data analyst turning SQL, Python
+            and Power BI / Grafana dashboards into decisions for 20+ enterprise clients across BFSI, financial services
+            and industrial IoT. GenAI practitioner. Based in Pune.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2 reveal-mask" style={{ animationDelay: "0.6s" }}>
@@ -140,13 +140,13 @@ const Hero = () => {
               className="absolute -right-4 bottom-32 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 font-mono-code text-xs animate-float"
               style={{ animationDelay: "1.2s" }}
             >
-              🧠 PyTorch
+              🦜 LangChain
             </div>
             <div
               className="absolute -left-8 bottom-16 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/15 font-mono-code text-xs animate-float"
               style={{ animationDelay: "1.8s" }}
             >
-              🤖 ML Ops
+              🗃️ SQL
             </div>
           </div>
         </div>

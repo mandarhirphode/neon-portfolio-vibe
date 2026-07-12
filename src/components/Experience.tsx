@@ -3,37 +3,29 @@ import { SectionHeader } from "./SectionHeader";
 
 const jobs = [
   {
-    role: "Data Analyst",
+    role: "Data Analyst — Employee of the Month 2025",
     company: "Integrated Active Monitoring",
-    location: "Pune",
+    location: "Pune · BFSI · Retail · Industrial IoT",
     period: "Jan 2025 — Present",
     bullets: [
-      "Built real-time IoT dashboards in Grafana for BMS KPIs — energy, AQI, lift utilities, MCB status across 5+ enterprise clients.",
-      "Developed IPMVP-compliant regression models in Python — improved energy optimisation accuracy by 15%.",
-      "Designed Power BI forecasting dashboards for energy consumption, reducing client penalty costs by 10%.",
-      "Engineered PostgreSQL ↔ Python ↔ Grafana / Power BI pipelines integrating InfluxDB time-series, saving 10+ hours/week.",
-      "Contributed to ESG/ASHRAE product development by defining KPIs for the BMS web portal.",
+      "Reduced data error rate from ~8% to under 1% across 3 production databases via a SQL-based KPI validation & governance framework.",
+      "Cut MIS report delivery from 2 days to same-day for 20+ enterprise clients using Python + n8n automation replacing 5-7 manual daily reports.",
+      "Delivered 10-12% average energy savings across 50+ clients with Python regression forecasting models at 85-93% accuracy for IPMVP baselines.",
+      "Shipped 25+ production Power BI & Grafana dashboards across 15+ BMS utility types — tracking 500+ portal users.",
+      "Standardised SQL reporting, schema docs and data dictionaries — cut ad-hoc query resolution time by ~35%.",
     ],
   },
   {
-    role: "Data Science Intern",
-    company: "RajYug IT Solutions",
-    location: "Pune",
-    period: "Sept — Dec 2024",
+    role: "MIS Executive · Data Analyst — Investments & Insurance",
+    company: "Motilal Oswal Authorised Partner",
+    location: "Pune · BFSI · Financial Services",
+    period: "Jun 2024 — Dec 2024",
     bullets: [
-      "Built Power BI and Tableau dashboards for Travel, Oil & Gas, and Real Estate sectors using DAX & Power Query.",
-      "Developed ETL pipelines using Microsoft Fabric and SSIS.",
-      "Built ML regression and classification models — improving forecast reliability by 12%.",
-    ],
-  },
-  {
-    role: "Data Analyst Intern",
-    company: "YBI Foundation",
-    location: "Remote",
-    period: "May — July 2024",
-    bullets: [
-      "Performed EDA, data cleaning and clustering using Python.",
-      "Built churn prediction models and customer behaviour dashboards in Power BI.",
+      "Reduced manual MIS effort by 40% for 50+ client accounts via Advanced Excel dashboards (Pivot Tables, Power Query, VLOOKUP).",
+      "Achieved 100% on-time delivery of daily, weekly & monthly MIS reports with a structured reporting calendar.",
+      "Improved client data integrity by 30% through cross-validation and reconciliation across equity, mutual fund and insurance data.",
+      "Saved 8-10 hours/week by automating recurring MIS workflows with Excel Macros and formula-driven templates.",
+      "Built KPI tracking dashboards for AUM growth, SIP inflows, revenue and policy renewals — adopted for weekly reviews.",
     ],
   },
 ];

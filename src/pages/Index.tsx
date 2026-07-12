@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import About from "@/components/About";
-import AmbientBackground from "@/components/AmbientBackground";
+import Scene3D from "@/components/Scene3D";
 import Contact from "@/components/Contact";
 import CustomCursor from "@/components/CustomCursor";
 import Experience from "@/components/Experience";
@@ -38,7 +38,7 @@ const Index = () => {
   return (
     <main className="relative">
       <Preloader />
-      <AmbientBackground />
+      <Scene3D />
       <ScrollProgress />
       <CustomCursor />
       <Navbar />

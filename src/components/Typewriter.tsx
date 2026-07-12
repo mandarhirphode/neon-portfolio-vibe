@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 const phrases = [
   "Data Analyst",
-  "Machine Learning Engineer",
-  "BI & ML Builder",
-  "Predictive Modeller",
-  "Pipeline + MLOps Tinkerer",
+  "SQL · Python · Power BI",
+  "BFSI & Energy Analytics",
+  "GenAI · LangChain · RAG",
+  "Forecasting & Automation",
 ];
 
 const Typewriter = () => {

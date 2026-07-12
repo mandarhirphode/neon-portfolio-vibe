@@ -41,9 +41,9 @@ const Hero = () => {
           </div>
 
           <p className="text-foreground/60 max-w-xl leading-relaxed text-pretty reveal-mask" style={{ animationDelay: "0.5s" }}>
-            Hey, I'm <span className="text-foreground font-medium">Mandar</span> — a data analyst & ML engineer building
-            real-time IoT dashboards, predictive energy models, and end-to-end ML pipelines for enterprise clients in
-            Pune, India.
+            Hey, I'm <span className="text-foreground font-medium">Mandar</span> — a data analyst turning SQL, Python
+            and Power BI / Grafana dashboards into decisions for 20+ enterprise clients across BFSI, financial services
+            and industrial IoT. GenAI practitioner. Based in Pune.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2 reveal-mask" style={{ animationDelay: "0.6s" }}>

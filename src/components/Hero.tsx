@@ -1,6 +1,7 @@
 import { ArrowDown, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import photo from "@/assets/mandar-photo.png";
 import Typewriter from "./Typewriter";
+import DataBars3D from "./DataBars3D";
 
 const Hero = () => {
   return (
@@ -92,18 +93,11 @@ const Hero = () => {
             {/* Decorative glow */}
             <div className="absolute -inset-8 bg-primary/30 blur-3xl rounded-full opacity-60 animate-pulse-soft" />
 
-            {/* Spinning text ring */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 animate-spin-slow z-20">
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                <defs>
-                  <path id="circle" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" />
-                </defs>
-                <text className="fill-foreground/70 font-mono-code" style={{ fontSize: "9.5px", letterSpacing: "1.5px" }}>
-                  <textPath href="#circle">AVAILABLE • FOR • HIRE • 2026 • </textPath>
-                </text>
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-primary-glow shadow-[0_0_15px_hsl(var(--primary))]" />
+            {/* 3D live bar chart widget */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 z-20 rounded-2xl glass-card overflow-hidden">
+              <DataBars3D height={160} />
+              <div className="absolute top-2 left-2 font-mono-code text-[9px] tracking-widest text-primary-glow">
+                LIVE · KPI
               </div>
             </div>
 

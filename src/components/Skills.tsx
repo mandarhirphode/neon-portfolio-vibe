@@ -1,5 +1,6 @@
 import { BarChart3, Brain, Code2, Database, LineChart, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
+import DataScatter3D from "./DataScatter3D";
 import { SectionHeader } from "./SectionHeader";
 
 const groups = [

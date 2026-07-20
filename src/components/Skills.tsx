@@ -66,22 +66,6 @@ const Skills = () => (
           </Reveal>
         ))}
 
-        {/* 3D scatter/regression viz card */}
-        <Reveal delay={groups.length * 220} className="glass-card rounded-2xl p-6 md:col-span-2 lg:col-span-3 relative overflow-hidden">
-          <div className="grid md:grid-cols-2 gap-6 items-center">
-            <div>
-              <div className="font-mono-code text-xs text-primary-glow tracking-widest mb-3">// LIVE MODEL</div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold leading-tight mb-3">
-                Fitting <span className="font-serif-italic gradient-text">signal</span> through noise.
-              </h3>
-              <p className="text-foreground/65 text-sm leading-relaxed">
-                A 3D scatter of observations with a fitted regression plane — the same class of models
-                driving 85-93% forecasting accuracy on IPMVP energy baselines in production.
-              </p>
-            </div>
-            <DataScatter3D height={260} />
-          </div>
-        </Reveal>
       </div>
     </div>
 

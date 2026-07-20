@@ -1,7 +1,7 @@
 import { ArrowDown, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import photo from "@/assets/mandar-photo.png";
 import Typewriter from "./Typewriter";
-import DataBars3D from "./DataBars3D";
+
 
 const Hero = () => {
   return (

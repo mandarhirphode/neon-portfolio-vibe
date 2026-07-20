@@ -1,7 +1,7 @@
 import { ArrowDown, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import photo from "@/assets/mandar-photo.png";
 import Typewriter from "./Typewriter";
-import DataBars3D from "./DataBars3D";
+
 
 const Hero = () => {
   return (
@@ -93,13 +93,6 @@ const Hero = () => {
             {/* Decorative glow */}
             <div className="absolute -inset-8 bg-primary/30 blur-3xl rounded-full opacity-60 animate-pulse-soft" />
 
-            {/* 3D live bar chart widget */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 z-20 rounded-2xl glass-card overflow-hidden">
-              <DataBars3D height={160} />
-              <div className="absolute top-2 left-2 font-mono-code text-[9px] tracking-widest text-primary-glow">
-                LIVE · KPI
-              </div>
-            </div>
 
             {/* Photo frame */}
             <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/10 noise-overlay">

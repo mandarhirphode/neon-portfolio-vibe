@@ -19,7 +19,7 @@ const jobs = [
     role: "MIS Executive · Data Analyst — Investments & Insurance",
     company: "Motilal Oswal Authorised Partner",
     location: "Pune · BFSI · Financial Services",
-    period: "Jun 2024 — Dec 2024",
+    period: "Feb 2024 — Dec 2024",
     bullets: [
       "Reduced manual MIS effort by 40% for 50+ client accounts via Advanced Excel dashboards (Pivot Tables, Power Query, VLOOKUP).",
       "Achieved 100% on-time delivery of daily, weekly & monthly MIS reports with a structured reporting calendar.",
